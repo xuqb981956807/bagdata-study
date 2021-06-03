@@ -1,0 +1,12 @@
+spring-data-elasticsearch         对应spring-data-commons 版本2.1.0              支持elasticsearch6.2.2
+spring-data-neo4j                    对应spring-data-commons 版本2.1.0
+spring-data-mongodb             对应spring-data-commons 版本2.1.0               MongoDB3.8.0
+spring-data-neo4j                    对应spring-data-commons 版本2.1.0               neo4j3.1.1
+spring-data-solr                       对应spring-data-commons 版本2.1.0               solr7.2.1
+
+
+https://www.codercto.com/a/4353.html（Spring Data Commons - 中文参考文档）
+http://makaidong.com/shirandedan/0/189189_7948509.html（spring-data-neo4j 4.2.4release文档概要,图数据库_博客园）
+
+6214 8353 0219 6636
+https://blog.csdn.net/zhao_tuo/article/details/78640175（Spring-data-jpa详解，全方位介绍）

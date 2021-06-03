@@ -1,0 +1,491 @@
+[[solr.repositories]]
+= Solr Repositories
+
+This chapter covers details of the Solr repository implementation.
+
+[[solr.namespace]]
+=== Spring Namespace
+
+The Spring Data Solr module contains a custom namespace that allows definition of repository beans and has elements for instantiating a `SolrClient` .
+
+Using the `repositories` element looks up Spring Data repositories as described in <<repositories.create-instances>>.
+
+The following example shows how to set up Solr repositories that use the Spring Data Solr namespace:
+
+.Setting up Solr repositories using the namespace
+====
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:solr="http://www.springframework.org/schema/data/solr"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/solr
+    http://www.springframework.org/schema/data/solr/spring-solr.xsd">
+
+  <solr:repositories base-package="com.acme.repositories" />
+</beans>
+----
+====
+
+Using the `solr-server` or `embedded-solr-server` element registers an instance of `SolrClient` in the context.
+
+The following examples shows how to set up a Solr client for HTTP:
+
+.`HttpSolrClient` using the namespace
+====
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:solr="http://www.springframework.org/schema/data/solr"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/solr
+    http://www.springframework.org/schema/data/solr/spring-solr.xsd">
+
+  <solr:solr-client id="solrClient" url="http://locahost:8983/solr" />
+</beans>
+----
+====
+
+The following example shows how to set up a load-balancing Solr client:
+
+.`LBSolrClient` using the namespace
+====
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:solr="http://www.springframework.org/schema/data/solr"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/solr
+    http://www.springframework.org/schema/data/solr/spring-solr.xsd">
+
+  <solr:solr-client id="solrClient" url="http://locahost:8983/solr,http://localhost:8984/solr" />
+</beans>
+----
+====
+
+The following example shows how to set up an embedded Solr server:
+
+.EmbeddedSolrServer using the namespace
+====
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:solr="http://www.springframework.org/schema/data/solr"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/solr
+    http://www.springframework.org/schema/data/solr/spring-solr.xsd">
+
+  <solr:embedded-solr-server id="solrClient" solrHome="classpath:com/acme/solr" />
+</beans>
+----
+====
+
+[[solr.annotation]]
+=== Annotation-based Configuration
+
+The Spring Data Solr repositories support can be activated both through an XML namespace and by using an annotation through Java configuration.
+
+The following example shows how to set up Solr repositories with Java configuration:
+
+.Spring Data Solr repositories using Java configuration
+====
+[source,java]
+----
+@Configuration
+@EnableSolrRepositories
+class ApplicationConfig {
+
+  @Bean
+  public SolrClient solrClient() {
+    EmbeddedSolrServerFactory factory = new EmbeddedSolrServerFactory("classpath:com/acme/solr");
+    return factory.getSolrServer();
+  }
+
+  @Bean
+  public SolrOperations solrTemplate() {
+    return new SolrTemplate(solrClient());
+  }
+}
+----
+====
+
+The preceding configuration sets up an `EmbeddedSolrServer`, which is used by the `SolrTemplate` . Spring Data Solr repositories are activated by using the `@EnableSolrRepositories` annotation, which essentially carries the same attributes as the XML namespace. If no base package is configured, it use the package in which the configuration class resides.
+
+[[solr.cdi]]
+=== Using CDI to Set up Solr Repositores
+
+You can also use CDI to set up the Spring Data Solr repositories, as the following example shows:
+
+.Spring Data Solr repositories using Java configuration
+====
+[source,java]
+----
+class SolrTemplateProducer {
+
+  @Produces
+  @ApplicationScoped
+  public SolrOperations createSolrTemplate() {
+    return new SolrTemplate(new EmbeddedSolrServerFactory("classpath:com/acme/solr"));
+  }
+}
+
+class ProductService {
+
+  private ProductRepository repository;
+
+  public Page<Product> findAvailableProductsByName(String name, Pageable pageable) {
+    return repository.findByAvailableTrueAndNameStartingWith(name, pageable);
+  }
+
+  @Inject
+  public void setRepository(ProductRepository repository) {
+    this.repository = repository;
+  }
+}
+----
+====
+
+[[solr.transactions]]
+=== Transaction Support
+
+Solr support for transactions on the server level means that create, update, and delete actions since the last commit, optimization, or rollback are queued on the server and committed, optimized, or rolled back as a group. Spring Data Solr repositories participate in Spring Managed Transactions and commit or rollback changes on complete.
+
+The following example shows how to use the `@Transactional` annotation to define a transaction (a save in this case):
+
+====
+[source,java]
+----
+@Transactional
+public Product save(Product product) {
+  Product savedProduct = jpaRepository.save(product);
+  solrRepository.save(savedProduct);
+  return savedProduct;
+}
+----
+====
+
+[[solr.query-methods]]
+== Query Methods
+
+This section covers creating queries by using methods within Java classes.
+
+[[solr.query-methods.finders]]
+=== Query Lookup Strategies
+
+The Solr module supports defining a query manually as `String` or having it be derived from the method name.
+
+NOTE: There is no QueryDSL support at this time.
+
+==== Declared Queries
+
+Deriving the query from the method name is not always sufficient and may result in unreadable method names. In this case you can either use Solr named queries (see "`<<solr.query-methods.named-queries>>`") or use the `@Query` annotation (see "`<<solr.query-methods.at-query>>`").
+
+[[solr.query-methods.criterions]]
+=== Query Creation
+
+Generally, the query creation mechanism for Solr works as described in <<repositories.query-methods>> . The following example shows what a Solr query method:
+
+.Query creation from method names
+====
+[source,java]
+----
+public interface ProductRepository extends Repository<Product, String> {
+  List<Product> findByNameAndPopularity(String name, Integer popularity);
+}
+----
+====
+
+The preceding example translates into the following Solr query:
+
+====
+[source]
+----
+q=name:?0 AND popularity:?1
+----
+====
+
+The following table describes the supported keywords for Solr:
+
+[cols="1,2,3", options="header"]
+.Supported keywords inside method names
+|===
+| Keyword
+| Sample
+| Solr Query String
+
+| `And`
+| `findByNameAndPopularity`
+| `q=name:?0 AND popularity:?1`
+
+| `Or`
+| `findByNameOrPopularity`
+| `q=name:?0 OR popularity:?1`
+
+| `Is`
+| `findByName`
+| `q=name:?0`
+
+| `Not`
+| `findByNameNot`
+| `q=-name:?0`
+
+| `IsNull`
+| `findByNameIsNull`
+| `q=-name:[* TO *]`
+
+| `IsNotNull`
+| `findByNameIsNotNull`
+| `q=name:[* TO *]`
+
+| `Between`
+| `findByPopularityBetween`
+| `q=popularity:[?0 TO ?1]`
+
+| `LessThan`
+| `findByPopularityLessThan`
+| `q=popularity:[* TO ?0}`
+
+| `LessThanEqual`
+| `findByPopularityLessThanEqual`
+| `q=popularity:[* TO ?0]`
+
+| `GreaterThan`
+| `findByPopularityGreaterThan`
+| `q=popularity:{?0 TO *]`
+
+| `GreaterThanEqual`
+| `findByPopularityGreaterThanEqual`
+| `q=popularity:[?0 TO *]`
+
+| `Before`
+| `findByLastModifiedBefore`
+| `q=last_modified:[* TO ?0}`
+
+| `After`
+| `findByLastModifiedAfter`
+| `q=last_modified:{?0 TO *]`
+
+| `Like`
+| `findByNameLike`
+| `q=name:?0*`
+
+| `NotLike`
+| `findByNameNotLike`
+| `q=-name:?0*`
+
+| `StartingWith`
+| `findByNameStartingWith`
+| `q=name:?0*`
+
+| `EndingWith`
+| `findByNameEndingWith`
+| `q=name:*?0`
+
+| `Containing`
+| `findByNameContaining`
+| `q=name:*?0*`
+
+| `Matches`
+| `findByNameMatches`
+| `q=name:?0`
+
+| `In`
+| `findByNameIn(Collection<String>
+										names)`
+| `q=name:(?0... )`
+
+| `NotIn`
+| `findByNameNotIn(Collection<String>
+										names)`
+| `q=-name:(?0... )`
+
+| `Within`
+| `findByStoreWithin(Point, Distance)`
+| `q={!geofilt pt=?0.latitude,?0.longitude sfield=store
+										d=?1}`
+
+| `Near`
+| `findByStoreNear(Point, Distance)`
+| `q={!bbox pt=?0.latitude,?0.longitude sfield=store
+										d=?1}`
+
+| `Near`
+| `findByStoreNear(Box)`
+| `q=store[?0.start.latitude,?0.start.longitude TO
+										?0.end.latitude,?0.end.longitude]`
+
+| `True`
+| `findByAvailableTrue`
+| `q=inStock:true`
+
+| `False`
+| `findByAvailableFalse`
+| `q=inStock:false`
+
+| `OrderBy`
+| `findByAvailableTrueOrderByNameDesc`
+| `q=inStock:true&sort=name desc`
+|===
+
+NOTE: Collections types can be used along with 'Like', 'NotLike', 'StartingWith', 'EndingWith' and 'Containing'.
+
+[source,java]
+----
+Page<Product> findByNameLike(Collection<String> name);
+----
+
+[[solr.query-methods.at-query]]
+=== Using the `@Query` Annotation
+
+Using named queries (see "`<<solr.query-methods.named-queries>>`") to declare queries for entities is a valid approach and works fine for a small number of queries. As the queries themselves are tied to the Java method that executes them, you actually can bind them directly by using the Spring Data Solr `@Query` annotation. The following example uses the `@Query` annotation to declare a query:
+
+.Declare query at the method using the `@Query` annotation.
+====
+[source,java]
+----
+public interface ProductRepository extends SolrRepository<Product, String> {
+  @Query("inStock:?0")
+  List<Product> findByAvailable(Boolean available);
+}
+----
+====
+
+[[solr.query-methods.named-queries]]
+=== Using Named Queries
+
+Named queries can be kept in a properties file and wired to the corresponding method. You should keep in mind the naming convention described in "`<<repositories.query-methods.query-lookup-strategies>>`" or use `@Query`. The following example shows how to declare name queries in a properties file:
+
+.Declare named query in a properties file
+====
+[source]
+----
+Product.findByNamedQuery=popularity:?0
+Product.findByName=name:?0
+----
+====
+
+The following example uses one of the named queries (`findByName`) declared in the preceding example:
+
+[source,java]
+----
+public interface ProductRepository extends SolrCrudRepository<Product, String> {
+
+  List<Product> findByNamedQuery(Integer popularity);
+
+  @Query(name = "Product.findByName")
+  List<Product> findByAnnotatedNamedQuery(String name);
+
+}
+----
+
+[[solr.mapping]]
+== Document Mapping
+
+Though there is already support for Entity Mapping within SolrJ, Spring Data Solr ships with its own mapping mechanism (described in the following section).
+
+NOTE: `DocumentObjectBinder` has superior performance. Therefore, we recommend using it if you have no need for customer mapping. You can switch to `DocumentObjectBinder` by registering `SolrJConverter` within `SolrTemplate`.
+
+[[solr.mapping.mappingSolr]]
+=== `MappingSolrConverter`
+
+`MappingSolrConverter` lets you register custom converters for your `SolrDocument` and `SolrInputDocument` as well as for other types nested within your beans. The converter is not 100% compatible with `DocumentObjectBinder`, and `@Indexed` has to be added with `readonly=true` to ignore fields from being written to Solr. The following example maps a number of fields within a document:
+
+.Sample Document Mapping
+====
+[source]
+----
+public class Product {
+  @Field
+  private String simpleProperty;
+
+  @Field("somePropertyName")
+  private String namedPropery;
+
+  @Field
+  private List<String> listOfValues;
+
+  @Indexed(readonly = true)
+  @Field("property_*")
+  private List<String> ignoredFromWriting;
+
+  @Field("mappedField_*")
+  private Map<String, List<String>> mappedFieldValues;
+
+  @Dynamic
+  @Field("dynamicMappedField_*")
+  private Map<String, String> dynamicMappedFieldValues;
+
+  @Field
+  private GeoLocation location;
+
+}
+----
+====
+
+The following table describes the properties you can map with `MappingSolrConverter`:
+
+[cols="1,3", options="header"]
+|===
+| Property
+| Write Mapping
+
+| simpleProperty
+| `<field name="simpleProperty">value</field>`
+
+| namedPropery
+| `<field name="somePropertyName">value</field>`
+
+| listOfValues
+| `<field name="listOfValues">value 1</field>` `<field name="listOfValues">value 2</field>` `<field name="listOfValues">value 3</field>`
+
+| ignoredFromWriting
+| `//not written to document`
+
+| mappedFieldValues
+| `<field name="mapentry[0].key">mapentry[0].value[0]</field>` `<field name="mapentry[0].key">mapentry[0].value[1]</field>` `<field name="mapentry[1].key">mapentry[1].value[0]</field>`
+
+| dynamicMappedFieldValues
+| `<field name="'dynamicMappedField_' + mapentry[0].key">mapentry[0].value[0]</field>` `<field name="'dynamicMappedField_' + mapentry[0].key">mapentry[0].value[1]</field>` `<field name="'dynamicMappedField_' + mapentry[1].key">mapentry[1].value[0]</field>`
+
+| location
+| `<field name="location">48.362893,14.534437</field>`
+|===
+
+You can register a custom converter by adding `CustomConversions` to `SolrTemplate` and initializing it with your own `Converter` implementation, as the following example shows:
+
+====
+[source]
+----
+<bean id="solrConverter" class="org.springframework.data.solr.core.convert.MappingSolrConverter">
+	<constructor-arg>
+		<bean class="org.springframework.data.solr.core.mapping.SimpleSolrMappingContext" />
+	</constructor-arg>
+	<property name="customConversions" ref="customConversions" />
+</bean>
+
+<bean id="customConversions" class="org.springframework.data.solr.core.convert.SolrCustomConversions">
+	<constructor-arg>
+		<list>
+			<bean class="com.acme.MyBeanToSolrInputDocumentConverter" />
+		</list>
+	</constructor-arg>
+</bean>
+
+<bean id="solrTemplate" class="org.springframework.data.solr.core.SolrTemplate">
+	<constructor-arg ref="solrClient" />
+	<property name="solrConverter" ref="solrConverter" />
+</bean>
+----
+====

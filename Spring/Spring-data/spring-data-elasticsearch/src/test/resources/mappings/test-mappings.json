@@ -1,0 +1,10 @@
+{
+    "test-setting-type": {
+        "properties": {
+            "email": {
+                "type": "text",
+                "analyzer": "emailAnalyzer"
+            }
+        }
+    }
+}

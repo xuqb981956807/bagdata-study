@@ -1,0 +1,77 @@
+= Spring Data Neo4j - Reference Documentation
+Michael Hunger; Oliver Gierke; Vince Bickers; Adam George; Luanne Misquitta; Michal Bachman; Mark Angrish; Nicolas Mervaillie; Gerrit Meier; Michael Simons
+:revnumber: {version}
+:revdate: {localdate}
+:toc:
+:toc-placement!:
+:spring-data-commons-docs: ../../../../spring-data-commons/src/main/asciidoc
+
+(C) 2010-2018 Graph Aware Ltd - Neo Technology, Inc. - Pivotal Software, Inc.
+
+image::springdatagraph.png[Spring + Neo4j,align="left"]
+
+NOTE: _Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically._
+
+toc::[]
+
+include::preface.adoc[]
+
+:leveloffset: +1
+include::new-features.adoc[]
+include::{spring-data-commons-docs}/dependencies.adoc[]
+include::{spring-data-commons-docs}/repositories.adoc[]
+include::{spring-data-commons-docs}/auditing.adoc[]
+:leveloffset: -1
+
+
+[[reference]]
+= SDN Reference Documentation
+
+:leveloffset: +1
+include::reference/introduction.adoc[]
+include::reference/getting-started.adoc[]
+include::reference/ogm-support.adoc[]
+include::reference/neo4j-repositories.adoc[]
+include::reference/projections.adoc[]
+include::reference/auditing.adoc[]
+
+:leveloffset: -1
+
+[[ogm-reference-documentation]]
+= Neo4j OGM Reference Documentation
+
+[abstract]
+--
+This chapter is taken from the http://neo4j.com/docs/ogm-manual/current[Official Neo4j OGM Reference Documentation].
+--
+
+:leveloffset: +1
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/introduction.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/getting-started.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/configuration.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/annotations.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/indexing.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/connecting.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/session.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/conversion.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/filters.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/events.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/testing.adoc[]
+include::https://raw.githubusercontent.com/neo4j/neo4j-ogm/master/neo4j-ogm-docs/src/main/asciidoc/reference/ha.adoc[]
+:leveloffset: -1
+
+
+
+[[appendix]]
+= Appendix
+
+:numbered!:
+:leveloffset: +1
+include::{spring-data-commons-docs}/repository-namespace-reference.adoc[]
+include::{spring-data-commons-docs}/repository-populator-namespace-reference.adoc[]
+include::{spring-data-commons-docs}/repository-query-keywords-reference.adoc[]
+include::{spring-data-commons-docs}/repository-query-return-types-reference.adoc[]
+include::migration.adoc[]
+include::faq.adoc[]
+
+:leveloffset: -1

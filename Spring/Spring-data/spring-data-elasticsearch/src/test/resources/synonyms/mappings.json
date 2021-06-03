@@ -1,0 +1,10 @@
+{
+  "synonym-type": {
+    "properties": {
+      "text": {
+        "type": "text",
+        "analyzer": "synonym_analyzer"
+      }
+    }
+  }
+}

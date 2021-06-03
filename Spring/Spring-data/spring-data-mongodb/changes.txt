@@ -1,0 +1,1 @@
+spring-data-mongodb £®2.1.0£©            ∂‘”¶spring-data-commons ∞Ê±æ2.1.0               MongoDB3.8.0

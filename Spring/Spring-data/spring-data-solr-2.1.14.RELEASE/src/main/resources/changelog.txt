@@ -1,0 +1,745 @@
+Spring Data Solr Changelog
+==========================
+
+Changes in version 2.1.14.RELEASE (2018-07-27)
+----------------------------------------------
+* DATASOLR-472 - Release 2.1.14 (Ingalls SR14).
+
+
+Changes in version 3.0.9.RELEASE (2018-07-26)
+---------------------------------------------
+* DATASOLR-473 - Release 3.0.9 (Kay SR9).
+
+
+Changes in version 4.0.0.RC1 (2018-07-26)
+-----------------------------------------
+* DATASOLR-471 - Move @Score to core.mapping package.
+* DATASOLR-469 - Full editing pass for spring-data-solr documentation.
+* DATASOLR-468 - Release 4.0 RC1 (Lovelace).
+* DATASOLR-466 - OrderBy uses field name value instead of @Field value.
+* DATASOLR-463 - Allow SpEL expressions for collection in @SolrDocument.
+
+
+Changes in version 3.0.8.RELEASE (2018-06-13)
+---------------------------------------------
+* DATASOLR-465 - Release 3.0.8 (Kay SR8).
+
+
+Changes in version 2.1.13.RELEASE (2018-06-13)
+----------------------------------------------
+* DATASOLR-464 - Release 2.1.13 (Ingalls SR13).
+
+
+Changes in version 4.0.0.M3 (2018-05-17)
+----------------------------------------
+* DATASOLR-467 - Adapt to SpEL extension API changes in Spring Data Commons.
+* DATASOLR-461 - On server startup annoying warn message for spring provided converters.
+* DATASOLR-460 - Release 4.0 M3 (Lovelace).
+
+
+Changes in version 3.0.7.RELEASE (2018-05-08)
+---------------------------------------------
+* DATASOLR-461 - On server startup annoying warn message for spring provided converters.
+* DATASOLR-457 - Release 3.0.7 (Kay SR7).
+
+
+Changes in version 2.1.12.RELEASE (2018-05-08)
+----------------------------------------------
+* DATASOLR-456 - Release 2.1.12 (Ingalls SR12).
+
+
+Changes in version 4.0.0.M2 (2018-04-13)
+----------------------------------------
+* DATASOLR-459 - Release 4.0 M2 (Lovelace).
+* DATASOLR-458 - Adapt to API changes in Spring Data Commons.
+* DATASOLR-454 - Remove explicit declaration of Jackson library versions.
+* DATASOLR-453 - Export composable repositories via CDI.
+* DATASOLR-452 - Can't register custom QueryParser because the Query object is wrapped with NamedObjects just before parse.
+* DATASOLR-451 - SolrCrudRepository with spatial query is order-sensitive.
+* DATASOLR-448 - %s is logged instead of the actual query.
+* DATASOLR-447 - Dependency Conflict : Conflicting classes existing in different libraries.
+* DATASOLR-445 - Cursor.State enum is "REDAY" not "READY".
+* DATASOLR-443 - Release 3.1 M2 (Lovelace).
+* DATASOLR-438 - Rollback method.
+* DATASOLR-427 - Upgrade to Solr 7 (requires major version bump to 4).
+
+
+Changes in version 3.0.6.RELEASE (2018-04-04)
+---------------------------------------------
+* DATASOLR-454 - Remove explicit declaration of Jackson library versions.
+* DATASOLR-452 - Can't register custom QueryParser because the Query object is wrapped with NamedObjects just before parse.
+* DATASOLR-449 - Release 3.0.6 (Kay SR6).
+* DATASOLR-448 - %s is logged instead of the actual query.
+* DATASOLR-447 - Dependency Conflict : Conflicting classes existing in different libraries.
+* DATASOLR-438 - Rollback method.
+
+
+Changes in version 2.1.11.RELEASE (2018-04-04)
+----------------------------------------------
+* DATASOLR-454 - Remove explicit declaration of Jackson library versions.
+* DATASOLR-448 - %s is logged instead of the actual query.
+* DATASOLR-441 - Fix line endings.
+* DATASOLR-440 - Release 2.1.11 (Ingalls SR11).
+
+
+Changes in version 3.0.5.RELEASE (2018-02-28)
+---------------------------------------------
+* DATASOLR-446 - Release 3.0.5 (Kay SR5).
+
+
+Changes in version 3.0.4.RELEASE (2018-02-19)
+---------------------------------------------
+* DATASOLR-442 - Release 3.0.4 (Kay SR4).
+
+
+Changes in version 3.1.0.M1 (2018-02-06)
+----------------------------------------
+* DATASOLR-441 - Fix line endings.
+* DATASOLR-439 - Update copyright years to 2018.
+* DATASOLR-437 - Boolean Operator Words not Escaped.
+* DATASOLR-429 - Adapt to changes in AbstractPersistentProperty.
+* DATASOLR-425 - Release 3.1 M1 (Lovelace).
+
+
+Changes in version 3.0.3.RELEASE (2018-01-24)
+---------------------------------------------
+* DATASOLR-441 - Fix line endings.
+* DATASOLR-437 - Boolean Operator Words not Escaped.
+* DATASOLR-435 - Release 3.0.3 (Kay SR3).
+
+
+Changes in version 2.1.10.RELEASE (2018-01-24)
+----------------------------------------------
+* DATASOLR-437 - Boolean Operator Words not Escaped.
+* DATASOLR-434 - Release 2.1.10 (Ingalls SR10).
+
+
+Changes in version 3.0.2.RELEASE (2017-11-27)
+---------------------------------------------
+* DATASOLR-431 - Release 3.0.2 (Kay SR2).
+
+
+Changes in version 2.1.9.RELEASE (2017-11-27)
+---------------------------------------------
+* DATASOLR-433 - Fix mock setup in SimpleSolrPersitentPropertyFieldNameTests after changes in Spring Data Commons.
+* DATASOLR-426 - Release 2.1.9 (Ingalls SR9).
+
+
+Changes in version 3.0.1.RELEASE (2017-10-27)
+---------------------------------------------
+* DATASOLR-429 - Adapt to changes in AbstractPersistentProperty.
+* DATASOLR-424 - Release 3.0.1 (Kay SR1).
+
+
+Changes in version 2.1.8.RELEASE (2017-10-11)
+---------------------------------------------
+* DATASOLR-419 - Release 2.1.8 (Ingalls SR8).
+
+
+Changes in version 3.0.0.RELEASE (2017-10-02)
+---------------------------------------------
+* DATASOLR-423 - Introduce nullable annotations for API validation.
+* DATASOLR-422 - Add explicit automatic module name for Java 9.
+* DATASOLR-421 - Upgrade to OpenWebBeans 2.0.1.
+* DATASOLR-420 - Release 3.0 GA (Kay).
+* DATASOLR-414 - Allow ping() with explicit core name.
+
+
+Changes in version 3.0.0.RC3 (2017-09-11)
+-----------------------------------------
+* DATASOLR-418 - Upgrade to Solr 6.6.1.
+* DATASOLR-416 - Collection name is not set in registering transaction synchronization callback of DeleteExecution.
+* DATASOLR-413 - Upgrade to Solr 6.6.
+* DATASOLR-411 - Release 3.0 RC3 (Kay).
+
+
+Changes in version 2.1.7.RELEASE (2017-09-11)
+---------------------------------------------
+* DATASOLR-412 - Release 2.1.7 (Ingalls SR7).
+
+
+Changes in version 2.1.6.RELEASE (2017-07-26)
+---------------------------------------------
+* DATASOLR-409 - Release 2.1.6 (Ingalls SR6).
+
+
+Changes in version 3.0.0.RC2 (2017-07-25)
+-----------------------------------------
+* DATASOLR-410 - Release 3.0 RC2 (Kay).
+
+
+Changes in version 3.0.0.RC1 (2017-07-25)
+-----------------------------------------
+* DATASOLR-408 - Adapt to nullability changes in spring-data-commons.
+* DATASOLR-407 - Wrong list Enum conversion in Entity mapping.
+* DATASOLR-406 - Adapt to API changes in mapping subsystem.
+* DATASOLR-405 - Remove template methods without collection name.
+* DATASOLR-404 - Support Date value for StatsResult "mean" parameter.
+* DATASOLR-402 - Solr query missing collection name.
+* DATASOLR-401 - Release 3.0 RC1 (Kay).
+* DATASOLR-394 - SolrJConverter ignores childDocuments when indexing.
+* DATASOLR-298 - Add support for child documents.
+
+
+Changes in version 2.1.5.RELEASE (2017-07-24)
+---------------------------------------------
+* DATASOLR-407 - Wrong list Enum conversion in Entity mapping.
+* DATASOLR-399 - Release 2.1.5 (Ingalls SR5).
+* DATASOLR-398 - Parent POM contains relative path to Spring Build POM.
+* DATASOLR-394 - SolrJConverter ignores childDocuments when indexing.
+
+
+Changes in version 3.0.0.M4 (2017-06-14)
+----------------------------------------
+* DATASOLR-396 - Adopt to changed AnnotationUtils.getValue(…) behavior.
+* DATASOLR-393 - Release 3.0 M4 (Kay).
+
+
+Changes in version 2.1.4.RELEASE (2017-06-08)
+---------------------------------------------
+* DATASOLR-382 - Release 2.1.4 (Ingalls SR4).
+
+
+Changes in version 2.0.11.RELEASE (2017-06-07)
+----------------------------------------------
+* DATASOLR-381 - Release 2.0.11 (Hopper SR11).
+
+
+Changes in version 3.0.0.M3 (2017-05-09)
+----------------------------------------
+* DATASOLR-385 - Adapt to API changes in repository interfaces.
+* DATASOLR-384 - Adapt to moved CustomConversions to Spring Data Commons.
+* DATASOLR-378 - Derived and String based queries do not take domain type collection name into account.
+* DATASOLR-376 - Can't find Stats<T>.
+* DATASOLR-375 - Unable to search on enumerated fields.
+* DATASOLR-374 - Unable to find @Document in the code base.
+* DATASOLR-373 - Release 3.0 M3 (Kay).
+
+
+Changes in version 2.0.10.RELEASE (2017-04-19)
+----------------------------------------------
+* DATASOLR-380 - Release 2.0.10 (Hopper SR10).
+
+
+Changes in version 2.1.3.RELEASE (2017-04-19)
+---------------------------------------------
+* DATASOLR-379 - Release 2.1.3 (Ingalls SR3).
+
+
+Changes in version 2.0.9.RELEASE (2017-04-19)
+---------------------------------------------
+* DATASOLR-376 - Can't find Stats<T>.
+* DATASOLR-366 - Release 2.0.9 (Hopper SR9).
+
+
+Changes in version 2.1.2.RELEASE (2017-04-19)
+---------------------------------------------
+* DATASOLR-376 - Can't find Stats<T>.
+* DATASOLR-375 - Unable to search on enumerated fields.
+* DATASOLR-365 - Release 2.1.2 (Ingalls SR2).
+* DATASOLR-364 - Duplicate core names in Solr Url.
+
+
+Changes in version 3.0.0.M2 (2017-04-04)
+----------------------------------------
+* DATASOLR-371 - Rename getRepositoryFactoryClassName to getRepositoryFactoryBeanClassName.
+* DATASOLR-364 - Duplicate core names in Solr Url.
+* DATASOLR-361 - Remove references to single-argument assertion methods.
+* DATASOLR-358 - Integrate Data Commons Java 8 upgrade branch.
+* DATASOLR-357 - Remove woodstox dependency.
+* DATASOLR-355 - Update "what’s new" section in reference documentation.
+* DATASOLR-354 - Update project documentation with the CLA tool integration.
+* DATASOLR-352 - Migrate ticket references in test code to Spring Framework style.
+* DATASOLR-345 - Upgrade to a newer JDK version on TravisCI.
+* DATASOLR-344 - Adapt API in RepositoryFactoryBeanSupport implementation.
+* DATASOLR-342 - Register repository factory in spring.factories for multi-store support.
+* DATASOLR-339 - Release 3.0 M2 (Kay).
+* DATASOLR-309 - Upgrade to Solr 6.
+
+
+Changes in version 2.0.8.RELEASE (2017-03-02)
+---------------------------------------------
+* DATASOLR-361 - Remove references to single-argument assertion methods.
+* DATASOLR-359 - Release 2.0.8 (Hopper SR8).
+
+
+Changes in version 2.1.1.RELEASE (2017-03-02)
+---------------------------------------------
+* DATASOLR-361 - Remove references to single-argument assertion methods.
+* DATASOLR-360 - Release 2.1.1 (Ingalls SR1).
+
+
+Changes in version 2.0.7.RELEASE (2017-01-26)
+---------------------------------------------
+* DATASOLR-346 - Release 2.0.7 (Hopper SR7).
+
+
+Changes in version 2.1.0.RELEASE (2017-01-26)
+---------------------------------------------
+* DATASOLR-357 - Remove woodstox dependency.
+* DATASOLR-355 - Update "what’s new" section in reference documentation.
+* DATASOLR-354 - Update project documentation with the CLA tool integration.
+* DATASOLR-352 - Migrate ticket references in test code to Spring Framework style.
+* DATASOLR-347 - Release 2.1 GA (Ingalls).
+
+
+Changes in version 2.0.6.RELEASE (2016-12-21)
+---------------------------------------------
+* DATASOLR-334 - Release 2.0.6 (Hopper SR6).
+
+
+Changes in version 2.1.0.RC1 (2016-12-21)
+-----------------------------------------
+* DATASOLR-345 - Upgrade to a newer JDK version on TravisCI.
+* DATASOLR-344 - Adapt API in RepositoryFactoryBeanSupport implementation.
+* DATASOLR-342 - Register repository factory in spring.factories for multi-store support.
+* DATASOLR-341 - SolrBasicPersistentProperty.isAssociation() should return false.
+* DATASOLR-324 - SpellcheckOptions should not default to /spell.
+* DATASOLR-321 - SolrTemplate should autoselect the core to use brefore requesting the solr client.
+* DATASOLR-320 - Release 2.1 RC1 (Ingalls).
+* DATASOLR-306 - Windows shows java.nio.file.InvalidPathException: Illegal char <:>.
+* DATASOLR-137 - Add support for spellcheck.
+
+
+Changes in version 3.0.0.M1 (2016-11-23)
+----------------------------------------
+* DATASOLR-336 - Set up 3.0 development.
+* DATASOLR-335 - Release 3.0 M1 (Kay).
+
+
+Changes in version 2.0.5.RELEASE (2016-11-03)
+---------------------------------------------
+* DATASOLR-331 - Release 2.0.5 (Hopper SR5).
+
+
+Changes in version 2.0.4.RELEASE (2016-09-29)
+---------------------------------------------
+* DATASOLR-327 - Release 2.0.4 (Hopper SR4).
+
+
+Changes in version 1.5.6.RELEASE (2016-09-29)
+---------------------------------------------
+* DATASOLR-330 - Release 1.5.6 (Gosling SR6).
+
+
+Changes in version 1.5.5.RELEASE (2016-09-20)
+---------------------------------------------
+* DATASOLR-326 - Release 1.5.5 (Gosling SR5).
+* DATASOLR-310 - Limit Parameter on GroupOptions is not included in Query when -1.
+* DATASOLR-308 - Auto pre/suffix map values does not work for trailing wildcards.
+* DATASOLR-305 - FacetLimit -1 on FacetOptions throws Exception.
+* DATASOLR-248 - Solr documents with multiValued fields are not parsed correctly by spring-data-solr.
+
+
+Changes in version 2.0.3.RELEASE (2016-09-20)
+---------------------------------------------
+* DATASOLR-316 - Fix compilation error on Java8 > b25 and Spring 4.3.
+* DATASOLR-314 - Release 2.0.3 (Hopper SR3).
+
+
+Changes in version 2.1.0.M1 (2016-07-27)
+----------------------------------------
+* DATASOLR-318 - Integrate version badge from spring.io.
+* DATASOLR-316 - Fix compilation error on Java8 > b25 and Spring 4.3.
+* DATASOLR-315 - Enable travis-ci build.
+* DATASOLR-313 - Make use of native SolrSchema request class.
+* DATASOLR-312 - Assert compatibility with Solr 6.
+* DATASOLR-310 - Limit Parameter on GroupOptions is not included in Query when -1.
+* DATASOLR-308 - Auto pre/suffix map values does not work for trailing wildcards.
+* DATASOLR-307 - GeoConverters bug when no digits behind decimal point.
+* DATASOLR-305 - FacetLimit -1 on FacetOptions throws Exception.
+* DATASOLR-294 - Release 2.1 M1 (Ingalls).
+* DATASOLR-248 - Solr documents with multiValued fields are not parsed correctly by spring-data-solr.
+* DATASOLR-244 - Framework does not allow a solr operation that includes faceting and highlighting combined.
+* DATASOLR-173 - Allow registration of custom converters with multicore support enabled.
+
+
+Changes in version 2.0.2.RELEASE (2016-06-15)
+---------------------------------------------
+* DATASOLR-310 - Limit Parameter on GroupOptions is not included in Query when -1.
+* DATASOLR-308 - Auto pre/suffix map values does not work for trailing wildcards.
+* DATASOLR-307 - GeoConverters bug when no digits behind decimal point.
+* DATASOLR-305 - FacetLimit -1 on FacetOptions throws Exception.
+* DATASOLR-295 - Release 2.0.2 (Hopper SR2).
+* DATASOLR-248 - Solr documents with multiValued fields are not parsed correctly by spring-data-solr.
+
+
+Changes in version 2.0.1.RELEASE (2016-04-06)
+---------------------------------------------
+* DATASOLR-293 - Release 2.0.1 (Hopper SR1).
+
+
+Changes in version 2.0.0.RELEASE (2016-04-06)
+---------------------------------------------
+* DATASOLR-288 - Release 2.0 GA (Hopper).
+* DATASOLR-227 - SolrServerUtils clone doesn't copy HttpClient's ConnectionManager.
+
+
+Changes in version 2.0.0.RC1 (2016-03-18)
+-----------------------------------------
+* DATASOLR-285 - Release 2.0 RC1 (Hopper).
+* DATASOLR-280 - Order of Facet fields are not maintained.
+* DATASOLR-176 - Add fromIndex to Join.
+
+
+Changes in version 1.5.4.RELEASE (2016-02-23)
+---------------------------------------------
+* DATASOLR-278 - Release 1.5.4 (Gosling SR4).
+
+
+Changes in version 2.0.0.M1 (2016-02-12)
+----------------------------------------
+* DATASOLR-275 - Add code of conduct.
+* DATASOLR-273 - Release 2.0 M1 (Hopper).
+* DATASOLR-271 - Adapt to API changes in Spring Data Commons.
+* DATASOLR-265 - Upgrade to Solr 5.3.1.
+* DATASOLR-232 - Upgrade to Solr 5.
+* DATASOLR-228 - Support for Solr 5.
+
+
+Changes in version 1.5.2.RELEASE (2015-12-18)
+---------------------------------------------
+* DATASOLR-272 - Release 1.5.2 (Gosling).
+
+
+Changes in version 1.5.1.RELEASE (2015-11-15)
+---------------------------------------------
+* DATASOLR-267 - Release 1.5.1 (Gosling).
+
+
+Changes in version 1.3.4.RELEASE (2015-10-14)
+---------------------------------------------
+* DATASOLR-263 - Release 1.3.4 (Evans).
+
+
+Changes in version 1.5.0.RELEASE (2015-09-01)
+---------------------------------------------
+* DATASOLR-257 - Release 1.5 GA (Gosling).
+* DATASOLR-256 - Update reference documentation.
+
+
+Changes in version 1.5.0.RC1 (2015-08-04)
+-----------------------------------------
+* DATASOLR-255 - Release 1.5 RC1 (Gosling).
+* DATASOLR-253 - Upgrade to Solr 4.10.4.
+* DATASOLR-250 - Switch from BeanWrapper to PersistentPropertyAccessor.
+* DATASOLR-243 - Ensure Spring Framework 4.2 compatibility.
+* DATASOLR-202 - Auto prefix/suffix map values.
+* DATASOLR-86 - Add Support for Range Facets.
+
+
+Changes in version 1.4.2.RELEASE (2015-07-28)
+---------------------------------------------
+* DATASOLR-251 - Release 1.4.2 (Fowler).
+
+
+Changes in version 1.2.6.RELEASE (2015-07-01)
+---------------------------------------------
+* DATASOLR-245 - Release 1.2.6 (Dijkstra).
+
+Changes in version 1.3.3.RELEASE (2015-07-01)
+---------------------------------------------
+* DATASOLR-246 - Release 1.3.3 (Evans).
+* DATASOLR-243 - Ensure Spring Framework 4.2 compatibility.
+
+
+Changes in version 1.4.1.RELEASE (2015-06-30)
+---------------------------------------------
+* DATASOLR-247 - Release 1.4.1 (Fowler).
+* DATASOLR-243 - Ensure Spring Framework 4.2 compatibility.
+
+
+Changes in version 1.5.0.M1 (2015-06-02)
+----------------------------------------
+* DATASOLR-240 - Pick up commons-io version from spring-data-build.
+* DATASOLR-239 - Release 1.5 M1 (Gosling).
+* DATASOLR-238 - Adapt to changes in Spring Data Commons.
+* DATASOLR-236 - face.limit parameter may be set to negative value.
+* DATASOLR-235 - Boost is not being applied to Map fields.
+
+
+Changes in version 1.4.0.RELEASE (2015-03-23)
+---------------------------------------------
+* DATASOLR-234 - Release 1.4 GA.
+* DATASOLR-231 - Update reference documentation.
+
+
+Changes in version 1.4.0.RC1 (2015-03-05)
+-----------------------------------------
+* DATASOLR-230 - Release 1.4 RC1.
+* DATASOLR-210 - Add @Score annotation marking a property as readonly and automatically add projection on score when present.
+
+
+Changes in version 1.3.2.RELEASE (2015-01-28)
+---------------------------------------------
+* DATASOLR-225 - Release 1.3.2.
+
+
+Changes in version 1.2.5.RELEASE (2015-01-27)
+---------------------------------------------
+* DATASOLR-224 - Release 1.2.5.
+* DATASOLR-203 - SolrServerUtils do not load CoreContainer properly.
+
+
+Changes in version 1.4.0.M1 (2014-12-01)
+----------------------------------------
+* DATASOLR-218 - Improved bean definition registration for repository configuration.
+* DATASOLR-217 - Release 1.4 M1.
+* DATASOLR-216 - Use PersistentPropertyAccessor API via PersistentEntity instead of BeanWrapper.
+* DATASOLR-214 - Tests using EmbeddedSolrServer do not properly clean up data directory.
+* DATASOLR-209 - GroupOptions Interface Polishment.
+* DATASOLR-208 - Functions have to be prefixed with {!func}.
+* DATASOLR-203 - SolrServerUtils do not load CoreContainer properly.
+* DATASOLR-196 - Wrong queries from nested criteria.
+* DATASOLR-163 - mappingContext is not set, fails when using with spring-data-rest-webmvc.
+* DATASOLR-160 - Add Stats for Field.
+* DATASOLR-147 - Upgrade to recent Solr version.
+* DATASOLR-121 - Add ability to add more group params.
+* DATASOLR-83 - Add support for Realtime GET.
+
+
+Changes in version 1.3.1.RELEASE (2014-10-30)
+---------------------------------------------
+* DATASOLR-213 - Release 1.3.1.
+* DATASOLR-203 - SolrServerUtils do not load CoreContainer properly.
+
+
+Changes in version 1.3.0.RELEASE (2014-09-05)
+---------------------------------------------
+* DATASOLR-199 - Release 1.3 GA.
+* DATASOLR-195 - Custom repository implementations are not picked up when using CDI.
+* DATASOLR-192 - Polish reference documentation.
+* DATASOLR-189 - SolrServerUtils clone doesn't copy http client's credentials provider.
+
+
+Changes in version 1.2.4.RELEASE (2014-08-27)
+---------------------------------------------
+* DATASOLR-194 - Release 1.2.4.
+* DATASOLR-189 - SolrServerUtils clone doesn't copy http client's credentials provider.
+* DATASOLR-185 - Faulty synchronisation of cache used in CustomConversions.java causes entire application to hang.
+
+
+Changes in version 1.3.0.RC1 (2014-08-13)
+-----------------------------------------
+* DATASOLR-190 - Release 1.3 RC1.
+* DATASOLR-188 - Convert to Asciidoctor for reference documentation.
+* DATASOLR-187 - Add support for custom implementations in CDI repositories.
+* DATASOLR-186 - Add support for sliced execution.
+* DATASOLR-185 - Faulty synchronisation of cache used in CustomConversions.java causes entire application to hang.
+* DATASOLR-184 - Improve multistore behaviour.
+* DATASOLR-182 - Check for usage for deprecations from spring-data-commons.
+* DATASOLR-181 - Remove deprecations from previous versions.
+* DATASOLR-112 - Allow zero as size of documents returned.
+
+
+Changes in version 1.2.2.RELEASE (2014-07-28)
+---------------------------------------------
+* DATASOLR-183 - Release 1.2.2.
+
+
+Changes in version 1.3.0.M1 (2014-07-10)
+----------------------------------------
+* DATASOLR-179 - Remove links to forum.spring.io.
+* DATASOLR-178 - Use application/json as default mimetype for MappingJacksonResponseParser.
+* DATASOLR-177 - Release 1.3 M1.
+* DATASOLR-171 - Populating Beans using constructor fails when multivalued field is defined as String[].
+* DATASOLR-170 - Add support for limiting the query result in the query derivation mechanism.
+* DATASOLR-168 - Nesting criterias seems not to work.
+* DATASOLR-162 - Allow pagination with cursorMark.
+* DATASOLR-72 - Dynamically create missing fields for SolrPersistentProperties.
+
+
+Changes in version 1.2.1.RELEASE (2014-06-30)
+---------------------------------------------
+* DATASOLR-175 - Release 1.2.1.
+* DATASOLR-171 - Populating Beans using constructor fails when multivalued field is defined as String[].
+* DATASOLR-168 - Nesting criterias seems not to work.
+
+
+Changes in version 1.1.3.RELEASE (2014-06-18)
+---------------------------------------------
+* DATASOLR-174 - Release 1.1.3.
+* DATASOLR-171 - Populating Beans using constructor fails when multivalued field is defined as String[].
+
+
+Changes in version 1.2.0.RELEASE (2014-05-20)
+---------------------------------------------
+* DATASOLR-165 - Release 1.2 GA.
+* DATASOLR-159 - IllegalArgumentException when using @Facet(pivotFields={"title,name"}).
+* DATASOLR-155 - Improve pivot facet annotation syntax.
+* DATASOLR-95 - Add support for getting the maximum score of search results.
+
+
+Changes in version 1.2.0.RC1 (2014-05-02)
+-----------------------------------------
+* DATASOLR-158 - SolrExceptionTranslator should convert nested ConnectException to DataAccessResourceFailureException.
+* DATASOLR-157 - Release 1.2 RC1.
+* DATASOLR-118 - Read loads wrong type for multivalued DateTime fields (generic heap pollution).
+
+
+Release Notes - Spring Data Solr - Version 1.1.2 GA (Codd)
+---------------------------------------------------------
+** No issues filed for 1.1.2 GA (Codd)
+
+Release Notes - Spring Data Solr - Version 1.2 M1 (Dijkstra)
+---------------------------------------------------------
+** Fix
+    * [DATASOLR-105] - Allow nesting of chained Criteria.
+
+** New Feature
+    * [DATASOLR-88] - Support for index time boost on managed entites. (kudos @franciscospaeth)
+    * [DATASOLR-143] - Add support for 'countBy' queries.
+    * [DATASOLR-144] - Add support for derived 'deleteBy...' queries.
+
+** Task
+    * [DATASOLR-142] - Support geo structures from spring-data-commons.
+    * [DATASOLR-147] - Upgrade to Solr 4.7
+    * [DATASOLR-152] - Adapt changes on property information from sd-commons.
+    * [DATASOLR-154] - Remove obsolete generics from BeanWrapper.
+
+Release Notes - Spring Data Solr - Version 1.1.1 GA (Codd)
+---------------------------------------------------------
+** No issues filed for 1.1.1 GA (Codd)
+
+Release Notes - Spring Data Solr - Version 1.1 GA (Codd)
+---------------------------------------------------------
+** Fix
+    * [DATASOLR-139] - Combination of OR | AND are not fully captured within SolrQueryCrator.
+    * [DATASOLR-140] - SolrServer should not be a mandatory bean reference in non multicore scenario.
+    * [DATASOLR-138] - CloudSolrServer not correctly created using MulticoreSolrServerFactory.
+
+Release Notes - Spring Data Solr - Version 1.1 RC1 (Codd)
+---------------------------------------------------------
+** New Feature
+    * [DATASOLR-132] - Add support for Solr functions
+
+** Fix
+    * [DATASOLR-104] - SolrTemplate uses wrong URL when there are multiple templates configured for different Solr cores
+    * [DATASOLR-128] - Assertations of Parameters to add PivotFields to FacetOptions aren't Being Executed Correctly
+    * [DATASOLR-129] - NullPointerException is thrown when using not managed entity for SolrCrudRepository
+    * [DATASOLR-130] - geodist() cannot be used in projection
+    * [DATASOLR-133] - PartialUpdate not working when try to save an empty Collection in a multivalue field
+
+** Improvement
+    * [DATASOLR-122] - Ability to return distance with the returned Solr documents
+
+Release Notes - Spring Data Solr - Version 1.1 M1 (Codd)
+--------------------------------------------------------
+** Fix
+    * [DATASOLR-116] - MappingSolrConverter doesn't honor Solr wildcard rules on read
+
+** Improvement
+    * [DATASOLR-99] - Allow defining Solr field name via @Indexed
+
+** New Feature
+    * [DATASOLR-113] - Add support for Pivot fields
+
+** Task
+    * [DATASOLR-123] - Ensure compatibility with Spring Framework 4.0.0.X
+    * [DATASOLR-126] - Release 1.1 M1
+
+Release Notes - Spring Data Solr - Version 1.0 GA - 2013-09-11
+--------------------------------------------------------------
+** Fix
+    * [DATASOLR-62] - Sort parameter passed to a query method is ignored when annotated query is used
+    * [DATASOLR-63] - Sort parameter passed to a query method is ignored when query method uses named query
+    * [DATASOLR-69] - Registering custom converters via XML
+    * [DATASOLR-75] - Criteria.is(Arrays.asList(......)) calls toString() instead of traversing list
+    * [DATASOLR-81] - Cannot index Geospatial with solr4
+    * [DATASOLR-94] - Joda-Time registered with no check
+    * [DATASOLR-98] - MappingSolrConverter does not retain element order when reading property
+    * [DATASOLR-109] - set custom requestHandler does not work for SimpleFacetQuery and SimpleHighlightQuery
+
+** Improvement
+    * [DATASOLR-43] - Add support Query Parameter for time allowed
+    * [DATASOLR-48] - Add support for numeric document ids
+    * [DATASOLR-49] - Add support Query Parameter for default type
+    * [DATASOLR-52] - Add support for 'IsNull' and 'IsNotNull' keywords
+    * [DATASOLR-53] - Add support for _version_ 
+    * [DATASOLR-55] - Allow usage of collections for 'startsWith', 'endsWith', 'contains'
+    * [DATASOLR-58] - Support for 'boost' in derived queries via annotation
+    * [DATASOLR-59] - Add support for LBHttpSolrServer
+    * [DATASOLR-61] - Build depends on Restlet which cannot be found in declared repositories
+    * [DATASOLR-68] - Add support for facet.prefix
+    * [DATASOLR-80] - Multiple Facets with prefix 
+    * [DATASOLR-82] - Add MulticoreSolrServerFactory
+    * [DATASOLR-90] - Add custom converter for reading/wirting joda time
+    * [DATASOLR-100] - Support proximity or sloppy searches
+    * [DATASOLR-107] - Add support for commitWithin to SolrTemplate
+
+** New Feature
+    * [DATASOLR-35] - Add support for non default constructors when mapping beans
+    * [DATASOLR-42] - Add support for {!join
+    * [DATASOLR-45] - Add placeholder support for 'filters' in @Query
+    * [DATASOLR-46] - Add placeholder support for 'queries' in @Facet
+    * [DATASOLR-60] - Support highlighting via annotation
+    * [DATASOLR-65] - Add support for non-default request handlers
+    * [DATASOLR-93] - Solr softCommit support
+
+** Task
+    * [DATASOLR-54] - Extract QueryParser Interface
+    * [DATASOLR-56] - Register jodatime converters only if jodatime is in classpath
+    * [DATASOLR-57] - Upgrade to solr 4.2
+    * [DATASOLR-66] - Upgrade to solr 4.2.1
+    * [DATASOLR-73] - Upgrade to Solr 4.3.0
+    * [DATASOLR-76] - Switch to commons-lang3
+    * [DATASOLR-79] - SolrOperations of SolrRepositoryFactoryBean cannot be accessed
+    * [DATASOLR-87] - Create custom Mapping for SolrDocument and SolrInputDocument
+    * [DATASOLR-91] - Upgrade to solr 4.3.1
+    * [DATASOLR-92] - Upgrade to data-commons 1.6.0
+    * [DATASOLR-101] - Clean up $fuzzy / $sloppy by providing concrete class instead of substring
+    * [DATASOLR-103] - SolrTemplate#queryForPage should return a solr specific page
+    * [DATASOLR-110] - Refactor SolrParameters to match DATACMNS-350
+    * [DATASOLR-111] - Release 1.0 GA
+
+Release Notes - Spring Data Solr - Version 1.0.0.RC1 - 2013-02-08
+-----------------------------------------------------------------
+
+** Improvement
+    * [DATASOLR-31] - Add unit to distance for spatial search
+
+** New Feature
+    * [DATASOLR-7]  - Add support for parameter 'facet.query' within FacetQuery
+    * [DATASOLR-18] - Participate in Transaction
+    * [DATASOLR-27] - Allow Facet Query definition via annotation
+    * [DATASOLR-28] - Allow definition of fields included in result (CommonParams.FL) via @Query
+    * [DATASOLR-29] - Update Partial Document
+    * [DATASOLR-32] - Enable FilterQuery definition via annotation
+    * [DATASOLR-34] - Allow definition of facet.query in @Facet annotation
+    * [DATASOLR-37] - Support q.op Parameter in SolrQuery
+    * [DATASOLR-39] - Support Bounding Box
+
+** Task
+    * [DATASOLR-30] - Upgrade to Solr 4.0
+    * [DATASOLR-33] - Upgrade to spring-data-commons 1.5
+    * [DATASOLR-36] - Add missing support for keyword NotLike
+    * [DATASOLR-38] - Use curly brackets for lessThan and greaterThan
+    * [DATASOLR-40] - Upgrade to new build infrastructure
+    * [DATASOLR-41] - Upgrade to solr 4.1
+    * [DATASOLR-47] - Release 1.0.0 RC1
+
+Release Notes - Spring Data Solr - Version 1.0.0.M1 - 2012-10-31
+----------------------------------------------------------------
+
+** New Feature
+    * [DATASOLR-8]  - Add sorting support for queries
+    * [DATASOLR-10] - Add support for Geospatial Queries
+    * [DATASOLR-13] - Add solr-server namespace element
+    * [DATASOLR-15] - Add support for NamedQueries
+    * [DATASOLR-20] - Add support for keywords: BEFORE and AFTER
+    * [DATASOLR-22] - Support namedQueryName in @Query Annotation
+    * [DATASOLR-23] - Add support for solr 4.0.x
+
+** Task
+    * [DATASOLR-5]  - Upgrade to Spring Data Commons 1.4 branch
+    * [DATASOLR-6]  - Add XML namespace and JavaCofig support
+    * [DATASOLR-9]  - Translate execptions during query execution to the according DataAccessException
+    * [DATASOLR-11] - Clean up TypeAliasAccessor in SimpleSolrTypeMapper
+    * [DATASOLR-12] - Add embedded-solr-server namespace element
+    * [DATASOLR-14] - Remove system scope dependency to spring-data-solr artifact in example project
+    * [DATASOLR-16] - Clean up Tests
+    * [DATASOLR-17] - Update documentation
+    * [DATASOLR-19] - Set up sonar analysis
+    * [DATASOLR-24] - Swith to data-commons 1.4.0.RELEASE
+    * [DATASOLR-25] - Release 1.0.0.M1
+    * [DATASOLR-26] - Align SolrOperations with other implementations
